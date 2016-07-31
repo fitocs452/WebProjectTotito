@@ -1,0 +1,57 @@
+$margin-top: 0px;
+
+.clock {
+  border-radius: 50%;
+  border: 1px solid black;
+  height: 500px;
+  width: 500px;
+  position: relative;
+}
+
+.hour-div {
+  color: black;
+  font-size: 50px;
+  height: 250px;
+  line-height: 80px;
+  margin: 0px 0px 0px 245px;
+  position: absolute;
+  top: $margin-top;
+  transform-origin: left bottom;
+
+  @for $i from 1 through (12) {
+    &.hour#{ $i } {
+      transform: rotate($i * 30deg);
+    }
+  }
+
+}
+
+.indicator {
+  background: black;
+  height: 230px;
+  left: 265px;
+  position: absolute;
+  top: $margin-top + 30px;
+  transform-origin: bottom center;
+
+  &.hours {
+    background: black;
+    width: 15px;
+  }
+
+  &.minutes {
+    background: blue;
+    width: 10px;
+  }
+
+  &.seconds {
+    background: red;
+    width: 5px;
+  }
+}
+
+.digital {
+  margin: 0 auto;
+  font-size: 100px;
+  border: 1px solid black;
+}

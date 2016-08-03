@@ -7,7 +7,6 @@
 </head>
 
 <body class="center">
-
   <div id="grid">
     <div class="grid-element grid-content-style" id="1_1"></div>
     <div class="grid-element grid-content-style" id="1_2"></div>
@@ -20,13 +19,11 @@
     <div class="grid-element grid-content-style" id="3_3"></div>
   </div>
 
-    <div class="end" id="reload_game">
-        <h1 id="winner"></h1>
-        <button onclick="restart()">Volver a jugar</button>
-    </div>
+  <div class="finished-container" id="result">
+      <h1 id="finished"></h1>
+      <button onclick="restart()">Volver a jugar</button>
+  </div>
 
-    <script src="scripts/app.js"></script>
-
+  <script src="scripts/app.js"></script>
 </body>
-
 </html>

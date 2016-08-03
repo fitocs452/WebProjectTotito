@@ -1,25 +1,10 @@
-.end {
-  background: gray;
-  color: #3d4250;
+.finished-container {
   display: none;
-  height: 650px;
   left: 10px;
+  margin: 0 auto;
   position: absolute;
   text-align: center;
-  top: 10px;
-  width: 650px;
-  z-index: 3; }
-  .end h1 {
-    font-size: 30px;
-    font-weight: 300; }
-  .end a {
-    background-color: #3d4250;
-    border-radius: 4px;
-    color: #fff;
-    padding: 14px 45px;
-    text-decoration: none; }
-    .end a:hover {
-      background-color: #262934; }
+  top: 10px; }
 
 #grid {
   width: 650px; }

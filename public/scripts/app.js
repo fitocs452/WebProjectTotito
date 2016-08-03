@@ -19,28 +19,39 @@ function evaluar_empate() {
   return true;
 }
 
-function verificar_jugada(j, i) {
+function verificar_jugada(columna, fila) {
   if (evaluar_empate()){
     return -1;
   }
 
-  if (grid_matrix[j][0] === grid_matrix[j][1] && grid_matrix[j][1] === grid_matrix[j][2]){
-    return grid_matrix[j][i];
+  // Verificamos que haya ganado de forma horizontal
+  if (grid_matrix[columna][0] === grid_matrix[columna][1] && grid_matrix[columna][1] === grid_matrix[columna][2]) {
+    return grid_matrix[columna][fila];
   }
 
-  if (grid_matrix[0][i] === grid_matrix[1][i] && grid_matrix[1][i] === grid_matrix[2][i]){
-    return grid_matrix[j][i];
+  // Verificamos que haya ganado de forma vertical
+  if (grid_matrix[0][fila] === grid_matrix[1][fila] && grid_matrix[1][fila] === grid_matrix[2][fila]) {
+    return grid_matrix[columna][fila];
   }
 
-  if (grid_matrix[0][0] !== 0 && grid_matrix[1][1] !== 0 && grid_matrix[2][2] !== 0) {
-    if (grid_matrix[0][0] === grid_matrix[1][1] && grid_matrix[1][1] === grid_matrix[2][2]){
-      return grid_matrix[j][i];
+  var center = grid_matrix[1][1];
+  // // Verificamos que haya ganado en diagonal
+  if (center !== 0) {
+    /*
+      [X, 0, 0]
+      [0, X, 0]
+      [0, 0, X]
+    */
+    if (grid_matrix[0][0] === center && center === grid_matrix[2][2]) {
+      return grid_matrix[columna][fila];
     }
-  }
-  
-  if (grid_matrix[0][2] !== 0 && grid_matrix[1][1] !== 0 && grid_matrix[2][0] !== 0) {
-    if (grid_matrix[0][2] === grid_matrix[1][1] && grid_matrix[1][1] === grid_matrix[2][0]){
-      return grid_matrix[j][i];
+    /*
+      [0, 0, X]
+      [0, X, 0]
+      [X, 0, 0]
+    */
+    if (grid_matrix[0][2] === center && center === grid_matrix[2][0]) {
+      return grid_matrix[columna][fila];
     }
   }
 
@@ -97,9 +108,9 @@ function new_click() {
   result.style.display = 'block';
 }
 
-for (var fila = 1; fila <= 3; fila++) {
-  for (var columna = 1; columna <= 3; columna++) {
-    document.getElementById('' + fila + '_' + columna).onclick = new_click;
+for (var columna = 1; columna <= 3; columna++) {
+  for (var fila = 1; fila <= 3; fila++) {
+    document.getElementById('' + columna + '_' + fila).onclick = new_click;
   }
 }
 

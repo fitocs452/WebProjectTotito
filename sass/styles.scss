@@ -1,57 +1,52 @@
-$margin-top: 0px;
+$grid-element-size: 200px;
 
-.clock {
-  border-radius: 50%;
-  border: 1px solid black;
-  height: 500px;
-  width: 500px;
-  position: relative;
-}
-
-.hour-div {
-  color: black;
-  font-size: 50px;
-  height: 250px;
-  line-height: 80px;
-  margin: 0px 0px 0px 245px;
+.end {
+  background: gray;
+  color: #3d4250;
+  display: none;
+  height: 650px;
+  left: 10px;
   position: absolute;
-  top: $margin-top;
-  transform-origin: left bottom;
+  text-align: center;
+  top: 10px;
+  width: 650px;
+  z-index: 3;
 
-  @for $i from 1 through (12) {
-    &.hour#{ $i } {
-      transform: rotate($i * 30deg);
+  h1 {
+    font-size: 30px;
+    font-weight: 300;
+  }
+  
+  a {
+    background-color: #3d4250;
+    border-radius: 4px;
+    color: #fff;
+    padding: 14px 45px;
+    text-decoration: none;
+    
+    &:hover {
+      background-color: #262934;
     }
   }
-
 }
 
-.indicator {
-  background: black;
-  height: 230px;
-  left: 265px;
-  position: absolute;
-  top: $margin-top + 30px;
-  transform-origin: bottom center;
-
-  &.hours {
-    background: black;
-    width: 15px;
-  }
-
-  &.minutes {
-    background: blue;
-    width: 10px;
-  }
-
-  &.seconds {
-    background: red;
-    width: 5px;
-  }
+#grid {
+  width: 650px;
 }
 
-.digital {
-  margin: 0 auto;
-  font-size: 100px;
-  border: 1px solid black;
+.grid-element {
+  background-color: black;
+  width: $grid-element-size;
+  height: $grid-element-size;
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.grid-content-style {
+  color: white;
+  font-weight: bold;
+  font-size: $grid-element-size;
+  line-height: $grid-element-size;
+  text-align: center;
 }

@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/styles.css"> 
-  </head>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 
-  <body>
+<body class="center">
 
-    <div id="analog-clock">
-      <div class="clock">
-          <div class="hour-div hour1">1</div>
-          <div class="hour-div hour2">2</div>
-          <div class="hour-div hour3">3</div>
-          <div class="hour-div hour4">4</div>
-          <div class="hour-div hour5">5</div>
-          <div class="hour-div hour6">6</div>
-          <div class="hour-div hour7">7</div>
-          <div class="hour-div hour8">8</div>
-          <div class="hour-div hour9">9</div>
-          <div class="hour-div hour10">10</div>
-          <div class="hour-div hour11">11</div>
-          <div class="hour-div hour12">12</div>
+  <div id="grid">
+    <div class="grid-element grid-content-style" id="1_1"></div>
+    <div class="grid-element grid-content-style" id="1_2"></div>
+    <div class="grid-element grid-content-style" id="1_3"></div>
+    <div class="grid-element grid-content-style" id="2_1"></div>
+    <div class="grid-element grid-content-style" id="2_2"></div>
+    <div class="grid-element grid-content-style" id="2_3"></div>
+    <div class="grid-element grid-content-style" id="3_1"></div>
+    <div class="grid-element grid-content-style" id="3_2"></div>
+    <div class="grid-element grid-content-style" id="3_3"></div>
+  </div>
 
-          <div id="hours_ind" class="indicator hours"></div>
-          <div id="minutes_ind" class="indicator minutes"></div>
-          <div id="seconds_ind" class="indicator seconds"></div>
-      </div>
+    <div class="end" id="reload_game">
+        <h1 id="winner"></h1>
+        <button onclick="restart()">Volver a jugar</button>
     </div>
-
-    <div id="digital-clock" class="digital">
-    </div>
-
-    <select id="selector">
-      <option value="analog">Analog</option>
-      <option value="digital">Digital</option>
-    </select>
 
     <script src="scripts/app.js"></script>
-    
-  </body>
+
+</body>
+
 </html>
